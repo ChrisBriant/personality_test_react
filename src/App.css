@@ -1,38 +1,116 @@
+:root {
+  /* backgrounds  */
+  --background-color : #322537;
+  --footer-bakcground-color : #000;
+
+  /* buttons  */
+  --button-color : #4c57d2;
+  --button-color-hover : #8992f5;
+
+  /* errors  */
+  --error-message-color : rgb(199, 96, 96);
+
+  /* links  */
+  --link-color : #362bcb;
+  --link-color-hover : #4639ff;
+
+  --spinner-color : #5c5c5c;
+  
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  background: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .App {
   text-align: center;
+  margin: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  margin: 10px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* BUTTONS  */
+.btn {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  background: var(--button-color);
+  padding: 6px;
+  border-radius: 10px;
+  transition: background .5s ease-in-out;
+  border: 0;
+  margin: 10px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn:hover {
+  background: var(--button-color-hover);
+  transition: background .5s ease-in-out;
+}
+
+/* MAIN APP STYLES  */
+
+.question-box {
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 2px #00000042;
+  margin: 20px;
+}
+
+.question-box .q-and-a-input {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  align-items: start;
+  width: 70%;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.question-box .q-and-a-input  input {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* spinner widget */
+
+/* GRAPHICAL EFFECTS  */
+.lds-dual-ring {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 12px solid #fff;
+  border-color: var(--spinner-color) transparent var(--spinner-color) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.lds-dual-ring.hidden {
+  display: none;
+}
+
+
+
+@keyframes lds-dual-ring {
+  0% {
+      transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+      transform: rotate(360deg);
   }
 }
